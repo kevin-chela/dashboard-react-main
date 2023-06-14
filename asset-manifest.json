@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/dashboard-react-main/static/js/main.35185d5f.js",
+    "main.js": "/dashboard-react-main/static/js/main.fce34495.js",
     "static/media/home-decor-3.jpg": "/dashboard-react-main/static/media/home-decor-3.74d13fcbd3c631fc7908.jpg",
     "static/media/home-decor-2.jpg": "/dashboard-react-main/static/media/home-decor-2.b4e5397c9846645ba275.jpg",
     "static/media/home-decor-1.jpg": "/dashboard-react-main/static/media/home-decor-1.05e218fd495ccc65c99d.jpg",
@@ -11,7 +11,6 @@
     "static/media/rocket-white.png": "/dashboard-react-main/static/media/rocket-white.de5786399f850a27a362.png",
     "static/media/curved-6.jpg": "/dashboard-react-main/static/media/curved-6.71ee1d1cc8196ed2126b.jpg",
     "static/media/ivancik.jpg": "/dashboard-react-main/static/media/ivancik.442b474727c414bb3b85.jpg",
-    "static/media/white-curved.jpeg": "/dashboard-react-main/static/media/white-curved.a5b7db662b0b14ab5534.jpeg",
     "static/media/visa.png": "/dashboard-react-main/static/media/visa.71c0d5e9e2aaee42e4c3.png",
     "static/media/mastercard.png": "/dashboard-react-main/static/media/mastercard.27fca3e7637a9458fb64.png",
     "static/media/team-1.jpg": "/dashboard-react-main/static/media/team-1.c821a2730a9c8e3f68eb.jpg",
@@ -31,6 +30,6 @@
     "index.html": "/dashboard-react-main/index.html"
   },
   "entrypoints": [
-    "static/js/main.35185d5f.js"
+    "static/js/main.fce34495.js"
   ]
 }
