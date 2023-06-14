@@ -4,6 +4,7 @@
   "author": "Creative Tim",
   "license": "SEE LICENSE IN <https://www.creative-tim.com/license>",
   "description": "ReactJS version of Soft UI Dashboard by Creative Tim",
+  "homepage": "https://kevin-chela.github.io/admin-react-main",
   "bugs": {
     "url": "https://github.com/creativetimofficial/soft-ui-dashboard-react/issues"
   },
@@ -41,6 +42,8 @@
     "web-vitals": "2.1.4"
   },
   "scripts": {
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
