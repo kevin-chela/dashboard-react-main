@@ -1,25 +1,37 @@
 {
   "files": {
-    "main.js": "/dashboard-react-main/static/js/main.fce34495.js",
+    "main.css": "/dashboard-react-main/static/css/main.72309452.css",
+    "main.js": "/dashboard-react-main/static/js/main.125d1200.js",
     "static/media/home-decor-3.jpg": "/dashboard-react-main/static/media/home-decor-3.74d13fcbd3c631fc7908.jpg",
     "static/media/home-decor-2.jpg": "/dashboard-react-main/static/media/home-decor-2.b4e5397c9846645ba275.jpg",
     "static/media/home-decor-1.jpg": "/dashboard-react-main/static/media/home-decor-1.05e218fd495ccc65c99d.jpg",
+    "static/media/fa-solid-900.ttf": "/dashboard-react-main/static/media/fa-solid-900.4a2cd718d7031b732e76.ttf",
     "static/media/curved0.jpg": "/dashboard-react-main/static/media/curved0.d146ec6e9401aa9d52c5.jpg",
+    "static/media/manhattan.jpg": "/dashboard-react-main/static/media/manhattan.4935cf6e2c583eec3c59.jpg",
+    "static/media/vr-bg.jpg": "/dashboard-react-main/static/media/vr-bg.7afa879d8396a599757f.jpg",
     "static/media/curved14.jpg": "/dashboard-react-main/static/media/curved14.12c9ea54425c4f1bc1d7.jpg",
     "static/media/waves-white.svg": "/dashboard-react-main/static/media/waves-white.56607573d7f27cc7c8eb151ea3d5bc67.svg",
     "static/media/marie.jpg": "/dashboard-react-main/static/media/marie.1c6828424a074f143c2d.jpg",
+    "static/media/fa-brands-400.ttf": "/dashboard-react-main/static/media/fa-brands-400.150de8eaa454d669c405.ttf",
     "static/media/rocket-white.png": "/dashboard-react-main/static/media/rocket-white.de5786399f850a27a362.png",
-    "static/media/curved-6.jpg": "/dashboard-react-main/static/media/curved-6.71ee1d1cc8196ed2126b.jpg",
+    "static/media/fa-solid-900.woff2": "/dashboard-react-main/static/media/fa-solid-900.bb975c966c37455a1bc3.woff2",
+    "static/media/curved1.jpg": "/dashboard-react-main/static/media/curved1.af81cb53f1615f33b710.jpg",
+    "static/media/fa-brands-400.woff2": "/dashboard-react-main/static/media/fa-brands-400.e033a13ee751afc1860c.woff2",
+    "static/media/icon-sun-cloud.png": "/dashboard-react-main/static/media/icon-sun-cloud.3399b234b40032f90d9b.png",
     "static/media/ivancik.jpg": "/dashboard-react-main/static/media/ivancik.442b474727c414bb3b85.jpg",
+    "static/media/fa-regular-400.ttf": "/dashboard-react-main/static/media/fa-regular-400.d87474231f4192884802.ttf",
     "static/media/visa.png": "/dashboard-react-main/static/media/visa.71c0d5e9e2aaee42e4c3.png",
     "static/media/mastercard.png": "/dashboard-react-main/static/media/mastercard.27fca3e7637a9458fb64.png",
     "static/media/team-1.jpg": "/dashboard-react-main/static/media/team-1.c821a2730a9c8e3f68eb.jpg",
     "static/media/kal-visuals-square.jpg": "/dashboard-react-main/static/media/kal-visuals-square.22829a59e2c6afb94b7a.jpg",
     "static/media/team-3.jpg": "/dashboard-react-main/static/media/team-3.b75146da5bfdf9d8ae61.jpg",
     "static/media/ivana-square.jpg": "/dashboard-react-main/static/media/ivana-square.b04026bd1ae5cf0d8a68.jpg",
+    "static/media/fa-regular-400.woff2": "/dashboard-react-main/static/media/fa-regular-400.3223dc79c1adee56370b.woff2",
     "static/media/team-4.jpg": "/dashboard-react-main/static/media/team-4.a1e1c29f1b839ddae393.jpg",
     "static/media/bruce-mars.jpg": "/dashboard-react-main/static/media/bruce-mars.45f6477957606abd2f24.jpg",
     "static/media/team-2.jpg": "/dashboard-react-main/static/media/team-2.e725aef8c892cb21f262.jpg",
+    "static/media/fa-v4compatibility.ttf": "/dashboard-react-main/static/media/fa-v4compatibility.0e3a648be390bd8cb094.ttf",
+    "static/media/fa-v4compatibility.woff2": "/dashboard-react-main/static/media/fa-v4compatibility.68577e40f3e70067b5da.woff2",
     "static/media/logo-slack.svg": "/dashboard-react-main/static/media/logo-slack.7c47c5aa474b5c4fb39fcf05ffb8e4e7.svg",
     "static/media/logo-xd.svg": "/dashboard-react-main/static/media/logo-xd.6e37886f94dba0c2967ece68a152e30c.svg",
     "static/media/logo-invision.svg": "/dashboard-react-main/static/media/logo-invision.a1062115730dcd10e1c4f4abe7b9ab33.svg",
@@ -30,6 +42,7 @@
     "index.html": "/dashboard-react-main/index.html"
   },
   "entrypoints": [
-    "static/js/main.fce34495.js"
+    "static/css/main.72309452.css",
+    "static/js/main.125d1200.js"
   ]
 }
