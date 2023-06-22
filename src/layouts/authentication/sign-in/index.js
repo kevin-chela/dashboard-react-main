@@ -15,8 +15,12 @@ Coded by www.creative-tim.com
 
 import { useState } from "react";
 
+//firebase
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../../firebase/firebaseConfig';
+
 // react-router-dom components
-import { Link } from "react-router-dom";
+import { useNavigate  } from "react-router-dom";
 
 // @mui material components
 import Switch from "@mui/material/Switch";
@@ -27,23 +31,99 @@ import SoftTypography from "components/SoftTypography";
 import SoftInput from "components/SoftInput";
 import SoftButton from "components/SoftButton";
 
+//Alerts
+
+import Alert from 'components/alert';
+
+//Loading
+
+import ReactLoading from "react-loading";
+
 // Authentication layout components
 import CoverLayout from "layouts/authentication/components/CoverLayout";
 
 // Images
-import curved9 from "assets/images/curved-images/curved-6.jpg";
+import curved9 from "assets/images/manhattan.jpg";
 
 function SignIn() {
+
+  //alerts
+
+  const [alert, setAlert] = useState({
+  show: false,
+  msg: '',
+  type: '',
+  icon: '',
+  })
+
+  const showAlert = (show = false, type = '', icon = '', msg = '') => {
+  setAlert({ show, type, icon, msg })
+  }
+
+  const [loading, setLoading] = useState(false);
+
   const [rememberMe, setRememberMe] = useState(true);
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
 
+  const [email, setEmail] = useState('admin@gmail.com');
+  const [password, setPassword] = useState('123456');
+  const [nameError, setNameError] = useState(false);
+
+  const navigate = useNavigate();
+
+  const login = (e) => {
+
+    e.preventDefault();
+
+    if((email.length=="") || (password.length=="")){
+      setNameError(true);
+    }
+
+    signInWithEmailAndPassword(auth, email, password)
+    .then((response) => {
+        console.log(response);
+
+        setLoading(true);
+
+        setTimeout(() => {
+
+          setLoading(false);
+
+          navigate('/authentication/otp', { replace: true })
+
+        }, 3000);
+       
+    })
+    .catch((error) => {
+      
+      const errorMessage = error.message;
+
+      showAlert(true, 'danger', 'info-circle', (errorMessage))
+
+    });
+  
+  }
+
+
   return (
     <CoverLayout
       title="Welcome back"
-      description="Enter your email and password to sign in"
       image={curved9}
+      
     >
+
+    {alert.show && <Alert {...alert} removeAlert={showAlert} />}
+
+    {loading && <div className='text-center, alignItem: center' style={{position: 'absolute', zIndex: '1000', marginLeft: '120px', marginTop: '180px'}}><ReactLoading
+          type="spinningBubbles"
+          color="#ADD8E6"
+          height={100}
+          width={50} 
+        /></div> }
+
+      
+     
       <SoftBox component="form" role="form">
         <SoftBox mb={2}>
           <SoftBox mb={1} ml={0.5}>
@@ -51,7 +131,13 @@ function SignIn() {
               Email
             </SoftTypography>
           </SoftBox>
-          <SoftInput type="email" placeholder="Email" />
+          <SoftInput 
+          type="email" 
+          placeholder="Email"
+          value={email} 
+          onChange={(e) => setEmail(e.target.value)} 
+          className={nameError ? "invalid" : ""} 
+          />
         </SoftBox>
         <SoftBox mb={2}>
           <SoftBox mb={1} ml={0.5}>
@@ -59,7 +145,13 @@ function SignIn() {
               Password
             </SoftTypography>
           </SoftBox>
-          <SoftInput type="password" placeholder="Password" />
+          <SoftInput 
+          type="password" 
+          placeholder="Password"
+          value={password} 
+          onChange={(e) => setPassword(e.target.value)}
+          className={nameError ? "invalid" : ""}
+           />
         </SoftBox>
         <SoftBox display="flex" alignItems="center">
           <Switch checked={rememberMe} onChange={handleSetRememberMe} />
@@ -73,16 +165,16 @@ function SignIn() {
           </SoftTypography>
         </SoftBox>
         <SoftBox mt={4} mb={1}>
-          <SoftButton variant="gradient" color="info" fullWidth>
+          <SoftButton variant="gradient" color="info" fullWidth onClick={login}>
             sign in
           </SoftButton>
         </SoftBox>
-        <SoftBox mt={3} textAlign="center">
+        {/* <SoftBox mt={3} textAlign="center">
           <SoftTypography variant="button" color="text" fontWeight="regular">
             Don&apos;t have an account?{" "}
             <SoftTypography
               component={Link}
-              to="/authentication/sign-up"
+              to="/authentication/otp"
               variant="button"
               color="info"
               fontWeight="medium"
@@ -91,10 +183,12 @@ function SignIn() {
               Sign up
             </SoftTypography>
           </SoftTypography>
-        </SoftBox>
+        </SoftBox> */}
       </SoftBox>
     </CoverLayout>
   );
 }
+
+
 
 export default SignIn;

@@ -93,10 +93,10 @@ function DefaultNavbar({ transparent, light, action }) {
       >
         <SoftBox component={Link} to="/" py={transparent ? 1.5 : 0.75} lineHeight={1}>
           <SoftTypography variant="button" fontWeight="bold" color={light ? "white" : "dark"}>
-            Soft UI Dashboard
+            ManHattanAdmin
           </SoftTypography>
         </SoftBox>
-        <SoftBox color="inherit" display={{ xs: "none", lg: "flex" }} m={0} p={0}>
+        {/* <SoftBox color="inherit" display={{ xs: "none", lg: "flex" }} m={0} p={0}>
           <DefaultNavbarLink icon="donut_large" name="dashboard" route="/dashboard" light={light} />
           <DefaultNavbarLink icon="person" name="profile" route="/profile" light={light} />
           <DefaultNavbarLink
@@ -111,8 +111,8 @@ function DefaultNavbar({ transparent, light, action }) {
             route="/authentication/sign-in"
             light={light}
           />
-        </SoftBox>
-        {action &&
+        </SoftBox> */}
+        {/* {action &&
           (action.type === "internal" ? (
             <SoftBox display={{ xs: "none", lg: "inline-block" }}>
               <SoftButton
@@ -141,7 +141,7 @@ function DefaultNavbar({ transparent, light, action }) {
                 {action.label}
               </SoftButton>
             </SoftBox>
-          ))}
+          ))} */}
         <SoftBox
           display={{ xs: "inline-block", lg: "none" }}
           lineHeight={0}

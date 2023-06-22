@@ -48,7 +48,19 @@ import { useSoftUIController, setMiniSidenav, setOpenConfigurator } from "contex
 // Images
 import brand from "assets/images/small-logos/logo-atlassian.svg";
 
+//firebase
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from './firebase/firebaseConfig';
+import { useAuth } from "./context-stores/authcontext";
+
+//sign in
+import SignIn from "layouts/authentication/sign-in";
+
+
 export default function App() {
+
+  const { user, setUser } = useAuth();
+
   const [controller, dispatch] = useSoftUIController();
   const { miniSidenav, direction, layout, openConfigurator, sidenavColor } = controller;
   const [onMouseEnter, setOnMouseEnter] = useState(false);
@@ -94,6 +106,17 @@ export default function App() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
   }, [pathname]);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {;
+      setUser(user);
+      
+    });
+
+    return () => {
+      unsubscribe();
+    }
+  }, [])
 
   const getRoutes = (allRoutes) =>
     allRoutes.map((route) => {
@@ -158,7 +181,25 @@ export default function App() {
       </ThemeProvider>
     </CacheProvider>
   ) : (
+    <>
+
+    {!user ? (
+      
+    <>
     <ThemeProvider theme={theme}>
+      <CssBaseline />
+      {layout === "authentication"}
+      
+      <Routes>
+        <Route path="*" element={<SignIn/>} />
+      </Routes>
+    </ThemeProvider>
+    </>
+
+      ):(
+        
+      <>
+      <ThemeProvider theme={theme}>
       <CssBaseline />
       {layout === "dashboard" && (
         <>
@@ -177,8 +218,12 @@ export default function App() {
       {layout === "vr" && <Configurator />}
       <Routes>
         {getRoutes(routes)}
-        <Route path="*" element={<Navigate to="/dashboard" />} />
+        <Route path="*" element={<Navigate to="/authentication/sign-in" />} />
       </Routes>
-    </ThemeProvider>
+      </ThemeProvider>
+      </>
+      )}
+      </>
+    
   );
 }

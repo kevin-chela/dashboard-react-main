@@ -30,14 +30,14 @@ import PageLayout from "examples/LayoutContainers/PageLayout";
 // Authentication layout components
 import Footer from "layouts/authentication/components/Footer";
 
-function CoverLayout({ color, header, title, description, image, top, children }) {
+function CoverLayout({ color, header, title, image, top, children }) {
   return (
     <PageLayout background="white">
       <DefaultNavbar
         action={{
           type: "external",
-          route: "https://creative-tim.com/product/soft-ui-dashboard-react",
-          label: "free download",
+          route: "https://kevin-chela.github.io/portfolio-react-main/",
+          label: "portfolio",
           color: "dark",
         }}
       />
@@ -47,6 +47,7 @@ function CoverLayout({ color, header, title, description, image, top, children }
         sx={{
           minHeight: "75vh",
           margin: 0,
+          marginTop: -5,
         }}
       >
         <Grid item xs={11} sm={8} md={5} xl={3}>
@@ -59,9 +60,7 @@ function CoverLayout({ color, header, title, description, image, top, children }
                       {title}
                     </SoftTypography>
                   </SoftBox>
-                  <SoftTypography variant="body2" fontWeight="regular" color="text">
-                    {description}
-                  </SoftTypography>
+                 
                 </>
               ) : (
                 header

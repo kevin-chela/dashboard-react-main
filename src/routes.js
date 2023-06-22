@@ -40,8 +40,10 @@ import Dashboard from "layouts/dashboard";
 import Tables from "layouts/tables";
 import Billing from "layouts/billing";
 import Profile from "layouts/profile";
+import VirtualReality from "layouts/virtual-reality"
 import SignIn from "layouts/authentication/sign-in";
 import SignUp from "layouts/authentication/sign-up";
+import Otp from "layouts/authentication/otp";
 
 // Soft UI Dashboard React icons
 import Shop from "examples/Icons/Shop";
@@ -50,6 +52,13 @@ import Document from "examples/Icons/Document";
 import SpaceShip from "examples/Icons/SpaceShip";
 import CustomerSupport from "examples/Icons/CustomerSupport";
 import CreditCard from "examples/Icons/CreditCard";
+import Cube from "examples/Icons/Cube";
+
+import {
+
+  MDBIcon,
+
+  } from "mdb-react-ui-kit";
 
 const routes = [
   {
@@ -72,11 +81,20 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Billing",
+    name: "Billing & Products",
     key: "billing",
     route: "/billing",
     icon: <CreditCard size="12px" />,
     component: <Billing />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "Virtual Reality",
+    key: "virtual-reality",
+    route: "/virtual-reality",
+    icon: <Cube size="12px" />,
+    component: <VirtualReality />,
     noCollapse: true,
   },
   
@@ -106,6 +124,15 @@ const routes = [
     route: "/authentication/sign-up",
     icon: <SpaceShip size="12px" />,
     component: <SignUp />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "One Time Password",
+    key: "one-time-password",
+    route: "/authentication/otp",
+    icon: <MDBIcon fas icon="fas-sm fa-fingerprint"/>,
+    component: <Otp />,
     noCollapse: true,
   },
 ];

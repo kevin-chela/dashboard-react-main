@@ -31,10 +31,12 @@ function DefaultNavbarMobile({ open, close }) {
 
   return (
     <Menu
+      style={{ marginTop: "20px", }}
       getContentAnchorEl={null}
       anchorOrigin={{
         vertical: "bottom",
         horizontal: "center",
+        
       }}
       transformOrigin={{
         vertical: "top",
@@ -43,12 +45,12 @@ function DefaultNavbarMobile({ open, close }) {
       anchorEl={open}
       open={Boolean(open)}
       onClose={close}
-      MenuListProps={{ style: { width: `calc(${width}px - 4rem)` } }}
+      MenuListProps={{ style: { width: `calc(${width}px - 4rem)`,} }}
     >
       <SoftBox px={0.5}>
-        <DefaultNavbarLink icon="donut_large" name="dashboard" route="/dashboard" />
+        {/* <DefaultNavbarLink icon="donut_large" name="dashboard" route="/dashboard" />
         <DefaultNavbarLink icon="person" name="profile" route="/profile" />
-        <DefaultNavbarLink icon="account_circle" name="sign up" route="/authentication/sign-up" />
+        <DefaultNavbarLink icon="account_circle" name="sign up" route="/authentication/sign-up" /> */}
         <DefaultNavbarLink icon="key" name="sign in" route="/authentication/sign-in" />
       </SoftBox>
     </Menu>
