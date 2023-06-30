@@ -1,6 +1,9 @@
 import React, { useContext, useEffect,  useReducer } from 'react';
 import listOrderData from '../data/order'
 
+// prop-types is a library for typechecking of props
+import PropTypes from "prop-types";
+
 import reducer from '../reducer/reducer'
 
 const url = "https://kevin-chela.github.io/manhattan_desert_api/list_orders.json"
@@ -68,5 +71,11 @@ export default function ContextProvider({ children }) {
     </AppContext.Provider>
   )
   }
+
+// Typechecking props of the SoftAlert
+ContextProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
     
 
