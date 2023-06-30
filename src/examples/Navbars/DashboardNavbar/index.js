@@ -203,7 +203,9 @@ function DashboardNavbar({ absolute, light, isMini }) {
               </IconButton>
               {renderMenu()}
             </SoftBox>
+
           </SoftBox>
+        
         )}
       </Toolbar>
     </AppBar>

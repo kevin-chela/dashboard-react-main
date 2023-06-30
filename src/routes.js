@@ -72,7 +72,7 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Employees",
+    name: "Products",
     key: "tables",
     route: "/tables",
     icon: <Office size="12px" />,
@@ -81,7 +81,7 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Billing & Products",
+    name: "Billing & Delivery",
     key: "billing",
     route: "/billing",
     icon: <CreditCard size="12px" />,
@@ -128,7 +128,7 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "One Time Password",
+    name: "OTP",
     key: "one-time-password",
     route: "/authentication/otp",
     icon: <MDBIcon fas icon="fas-sm fa-fingerprint"/>,

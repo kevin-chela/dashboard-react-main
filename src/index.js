@@ -21,15 +21,20 @@ import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 // Soft UI Dashboard React Context Provider
+
 import { SoftUIControllerProvider } from "context";
 
 import AuthContextProvider from "./context-stores/authcontext";
+
+import AppContext  from './contextData/context'
 
 ReactDOM.render(
   <BrowserRouter>
     <SoftUIControllerProvider>
     <AuthContextProvider>
+      <AppContext>
       <App />
+      </AppContext>
     </AuthContextProvider>
     </SoftUIControllerProvider>
   </BrowserRouter>,
