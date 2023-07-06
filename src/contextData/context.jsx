@@ -8,6 +8,8 @@ import reducer from '../reducer/reducer'
 
 const url = "https://kevin-chela.github.io/manhattan_desert_api/list_orders.json"
 
+// const url = "http://dashboard.developers.co.ke/list"
+
 const AppContext = React.createContext()
 
 const initialState = {

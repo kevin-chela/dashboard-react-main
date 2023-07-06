@@ -154,6 +154,7 @@ function Orders() {
         {renderMenu}
       </SoftBox>
       <SoftBox
+        style={{overflowX: 'scroll'}}
         p={3}
         sx={{
           "& .MuiTableRow-root:not(:last-child)": {
@@ -165,7 +166,7 @@ function Orders() {
         }}
       >
 
-        <MDBTable align="middle" style={{marginLeft: '50', marginRight: '50', overflowX: 'scroll'}}>
+        <MDBTable align="middle" style={{marginLeft: '50', marginRight: '50', overflow: 'scroll'}}>
         <MDBTableHead>
         <tr>
             <th scope="col">Client</th>
