@@ -154,7 +154,7 @@ function Orders() {
         {renderMenu}
       </SoftBox>
       <SoftBox
-        style={{overflowX: 'scroll'}}
+        style={{overflow: 'auto'}}
         p={3}
         sx={{
           "& .MuiTableRow-root:not(:last-child)": {
