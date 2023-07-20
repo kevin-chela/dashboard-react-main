@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/dashboard-react-main/static/css/main.72309452.css",
-    "main.js": "/dashboard-react-main/static/js/main.8977b01b.js",
+    "main.js": "/dashboard-react-main/static/js/main.142b3fa7.js",
     "static/media/home-decor-3.jpg": "/dashboard-react-main/static/media/home-decor-3.74d13fcbd3c631fc7908.jpg",
     "static/media/home-decor-2.jpg": "/dashboard-react-main/static/media/home-decor-2.b4e5397c9846645ba275.jpg",
     "static/media/home-decor-1.jpg": "/dashboard-react-main/static/media/home-decor-1.05e218fd495ccc65c99d.jpg",
     "static/media/fa-solid-900.ttf": "/dashboard-react-main/static/media/fa-solid-900.4a2cd718d7031b732e76.ttf",
     "static/media/curved0.jpg": "/dashboard-react-main/static/media/curved0.d146ec6e9401aa9d52c5.jpg",
-    "static/media/manhattan.jpg": "/dashboard-react-main/static/media/manhattan.4935cf6e2c583eec3c59.jpg",
     "static/media/vr-bg.jpg": "/dashboard-react-main/static/media/vr-bg.7afa879d8396a599757f.jpg",
+    "static/media/food.jpg": "/dashboard-react-main/static/media/food.335ddda7dde5a6a8658f.jpg",
     "static/media/curved14.jpg": "/dashboard-react-main/static/media/curved14.12c9ea54425c4f1bc1d7.jpg",
     "static/media/waves-white.svg": "/dashboard-react-main/static/media/waves-white.56607573d7f27cc7c8eb151ea3d5bc67.svg",
     "static/media/marie.jpg": "/dashboard-react-main/static/media/marie.1c6828424a074f143c2d.jpg",
@@ -43,6 +43,6 @@
   },
   "entrypoints": [
     "static/css/main.72309452.css",
-    "static/js/main.8977b01b.js"
+    "static/js/main.142b3fa7.js"
   ]
 }
