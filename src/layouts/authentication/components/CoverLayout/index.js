@@ -69,7 +69,7 @@ function CoverLayout({ color, header, title, image, top, children }) {
             <SoftBox p={3}>{children}</SoftBox>
           </SoftBox>
         </Grid>
-        <Grid item xs={12} md={5}>
+        <Grid item xs={12} md={5} >
           <SoftBox
             height="100%"
             display={{ xs: "none", md: "block" }}
@@ -83,7 +83,7 @@ function CoverLayout({ color, header, title, image, top, children }) {
             }}
           >
             <SoftBox
-              ml={-8}
+              ml={-28}
               height="100%"
               sx={{
                 backgroundImage: `url(${image})`,
@@ -94,6 +94,7 @@ function CoverLayout({ color, header, title, image, top, children }) {
           </SoftBox>
         </Grid>
       </Grid>
+      <br/>
       <Footer />
     </PageLayout>
   );

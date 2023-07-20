@@ -43,7 +43,7 @@ function SignUp() {
 
   return (
     <BasicLayout
-      title="Welcome!"
+      title="Register Client"
       description="Use these awesome forms to login or create new account in your project for free."
       image={curved6}
     >
@@ -59,22 +59,34 @@ function SignUp() {
         <Separator />
         <SoftBox pt={2} pb={3} px={3}>
           <SoftBox component="form" role="form">
-            <SoftBox mb={2}>
-              <SoftInput placeholder="Name" />
+            <SoftBox mb={3}  display="flex" justifyContent="space-between" alignItems="center">
+              <SoftInput type="text" placeholder="First Name*" />
+              &nbsp;&nbsp;
+              <SoftInput type="text" placeholder="Last Name*" />
             </SoftBox>
-            <SoftBox mb={2}>
-              <SoftInput type="email" placeholder="Email" />
+            <SoftBox mb={3}>
+              <SoftInput type="email" placeholder="Email Address*" />
             </SoftBox>
-            <SoftBox mb={2}>
-              <SoftInput type="password" placeholder="Password" />
+            <SoftBox mb={3}>
+              <SoftInput type="text" placeholder="Passport Number*" />
+            </SoftBox>
+            <SoftBox mb={3}  display="flex" justifyContent="space-between" alignItems="center">
+              <SoftInput type="text" placeholder="Contact Number*" />
+              &nbsp;&nbsp;
+              <SoftInput type="text" placeholder="Home Address*" />
+            </SoftBox>
+            <SoftBox mb={3}  display="flex" justifyContent="space-between" alignItems="center">
+              <SoftInput type="date" placeholder="Date of Birth*" />
+              &nbsp;&nbsp;
+              <SoftInput type="text" placeholder="Citizenship*" />
             </SoftBox>
             <SoftBox display="flex" alignItems="center">
-              <Checkbox checked={agreement} onChange={handleSetAgremment} />
+              <Checkbox checked={agreement} onChange={handleSetAgremment}/>
               <SoftTypography
                 variant="button"
                 fontWeight="regular"
                 onClick={handleSetAgremment}
-                sx={{ cursor: "poiner", userSelect: "none" }}
+                sx={{ cursor: "pointer", userSelect: "none" }}
               >
                 &nbsp;&nbsp;I agree the&nbsp;
               </SoftTypography>
@@ -84,12 +96,13 @@ function SignUp() {
                 variant="button"
                 fontWeight="bold"
                 textGradient
+                color="info"
               >
                 Terms and Conditions
               </SoftTypography>
             </SoftBox>
             <SoftBox mt={4} mb={1}>
-              <SoftButton variant="gradient" color="dark" fullWidth>
+              <SoftButton variant="gradient" color="info" fullWidth>
                 sign up
               </SoftButton>
             </SoftBox>
@@ -100,7 +113,7 @@ function SignUp() {
                   component={Link}
                   to="/authentication/sign-in"
                   variant="button"
-                  color="dark"
+                  color="info"
                   fontWeight="bold"
                   textGradient
                 >

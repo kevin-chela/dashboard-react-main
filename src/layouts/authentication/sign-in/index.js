@@ -43,7 +43,7 @@ import ReactLoading from "react-loading";
 import CoverLayout from "layouts/authentication/components/CoverLayout";
 
 // Images
-import curved9 from "assets/images/manhattan.jpg";
+import curved9 from "assets/images/food.jpg";
 
 function SignIn() {
 

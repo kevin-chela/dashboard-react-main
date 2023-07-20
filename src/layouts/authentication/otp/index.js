@@ -38,7 +38,7 @@ import SoftButton from "components/SoftButton";
 import CoverLayout from "layouts/authentication/components/CoverLayout";
 
 // Images
-import curved9 from "assets/images/manhattan.jpg";
+import curved9 from "assets/images/food.jpg";
 
 //Alerts
 
@@ -87,7 +87,7 @@ function Otp() {
   };
 
   return (
-    <CoverLayout title="Verification Code" image={curved9} mt={5}>
+    <CoverLayout title="Verification Code" image={curved9} >
       {alert.show && <Alert {...alert} removeAlert={showAlert} />}
 
       <SoftBox component="form" role="form">
