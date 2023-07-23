@@ -41,8 +41,27 @@ import breakpoints from "assets/theme/base/breakpoints";
 // Images
 import burceMars from "assets/images/bruce-mars.jpg";
 import curved0 from "assets/images/curved-images/curved0.jpg";
+import SoftButton from "components/SoftButton";
+
+//firebase
+
+import { auth } from '../../../../firebase/firebaseConfig';
+import { signOut } from 'firebase/auth';
+import { useAuth } from '../../../../context-stores/authcontext';
+
+import { useNavigate } from 'react-router-dom'
 
 function Header() {
+
+  const navigate = useNavigate()
+  const { setUser_data } = useAuth();
+
+  const logout = () => {
+    signOut(auth);
+    setUser_data();
+    navigate('/authentication/signin');
+ }
+
   const [tabsOrientation, setTabsOrientation] = useState("horizontal");
   const [tabValue, setTabValue] = useState(0);
 
@@ -133,7 +152,13 @@ function Header() {
                 <Tab label="Settings" icon={<Settings />} />
               </Tabs>
             </AppBar>
+
+            
           </Grid>
+          &nbsp;
+          <SoftButton style={{marginBottom: -25}} variant="gradient" mt={5}color="info" onClick={logout}>
+              Logout
+          </SoftButton>
         </Grid>
       </Card>
     </SoftBox>

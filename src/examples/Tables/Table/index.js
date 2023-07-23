@@ -32,6 +32,7 @@ import SoftBox from "components/SoftBox";
 import SoftAvatar from "components/SoftAvatar";
 import SoftTypography from "components/SoftTypography";
 
+
 // Soft UI Dashboard React base styles
 import colors from "assets/theme/base/colors";
 import typography from "assets/theme/base/typography";

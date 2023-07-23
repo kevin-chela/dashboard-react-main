@@ -56,7 +56,6 @@ import { useAuth } from "./context-stores/authcontext";
 //sign in
 import SignIn from "layouts/authentication/sign-in";
 
-
 export default function App() {
 
   const { user, setUser } = useAuth();
@@ -196,7 +195,7 @@ export default function App() {
     </ThemeProvider>
     </>
 
-      ):(
+    ):(
         
       <>
       <ThemeProvider theme={theme}>
@@ -218,7 +217,7 @@ export default function App() {
       {layout === "vr" && <Configurator />}
       <Routes>
         {getRoutes(routes)}
-        <Route path="*" element={<Navigate to="/authentication/sign-in" />} />
+        <Route path="*" element={<Navigate to="/dashboard" />} />
       </Routes>
       </ThemeProvider>
       </>

@@ -84,15 +84,7 @@ function SignIn() {
     .then((response) => {
         console.log(response);
 
-        setLoading(true);
-
-        setTimeout(() => {
-
-          setLoading(false);
-
-          navigate('/authentication/otp', { replace: true })
-
-        }, 3000);
+        navigate('/authentication/otp', { replace: true })
        
     })
     .catch((error) => {

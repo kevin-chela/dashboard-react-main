@@ -49,6 +49,7 @@ import team1 from "assets/images/team-1.jpg";
 import team2 from "assets/images/team-2.jpg";
 import team3 from "assets/images/team-3.jpg";
 import team4 from "assets/images/team-4.jpg";
+import SoftButton from "components/SoftButton";
 
 function Overview() {
   return (
@@ -88,6 +89,8 @@ function Overview() {
               ]}
               action={{ route: "", tooltip: "Edit Profile" }}
             />
+
+            
           </Grid>
           <Grid item xs={12} xl={4}>
             <ProfilesList title="conversations" profiles={profilesListData} />

@@ -20,14 +20,16 @@ import Card from "@mui/material/Card";
 import SoftBox from "components/SoftBox";
 import SoftTypography from "components/SoftTypography";
 import SoftButton from "components/SoftButton";
-import SoftPagination from "components/SoftPagination";
 
 // Soft UI Dashboard React examples
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
+import Table from "examples/Tables/Table";
 
-import Profile from "./detail/index";
+// Data
+import clientTableData from "layouts/tables/data/clientTableData";
+import projectsTableData from "layouts/tables/data/projectsTableData";
 
 // react-router components
 import { Link } from "react-router-dom";
@@ -44,11 +46,14 @@ MDBTableBody,
 
 //Context
 
-import { useGlobalContext } from '../../contextData/context'
+import { useGlobalContext } from '../../../contextData/context'
 
 function Tables() {
 
   const { clients } = useGlobalContext()
+
+  const { columns, rows } = clientTableData;
+  const { columns: prCols, rows: prRows } = projectsTableData;
 
   return (
     <DashboardLayout>
@@ -86,11 +91,11 @@ function Tables() {
               >
               <MDBTableHead>
               <tr>
-                  <th scope="col" style={{fontSize: '12px', opacity: 0.5}} >CLIENT PROFILE</th>
-                  <th scope="col" style={{fontSize: '12px', opacity: 0.5}} >PASSPORT NUMBER</th>
-                  <th scope="col" style={{fontSize: '12px', opacity: 0.5}} >CONTACT</th>
-                  <th scope="col" style={{fontSize: '12px', opacity: 0.5}} >CITIZEN</th>
-                  <th scope="col" style={{fontSize: '12px', opacity: 0.5}} >ACTION</th>
+                  <th scope="col" style={{fontSize: '12px'}} className="text-secondary">CLIENT PROFILE</th>
+                  <th scope="col" style={{fontSize: '12px'}} className="text-secondary">PASSPORT NUMBER</th>
+                  <th scope="col" style={{fontSize: '12px'}} className="text-secondary">CONTACT</th>
+                  <th scope="col" style={{fontSize: '12px'}} className="text-secondary">CITIZEN</th>
+                  <th scope="col" style={{fontSize: '12px'}} className="text-secondary">ACTION</th>
               </tr>
               </MDBTableHead>
               <MDBTableBody style={{marginLeft: '150'}}>
@@ -145,17 +150,29 @@ function Tables() {
               
               
               </MDBTableBody>
-
-              <SoftPagination>
-             
-              </SoftPagination>
                 
               </MDBTable>
 
             </SoftBox>
           </Card>
         </SoftBox>
-        
+        <Card>
+          <SoftBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
+            <SoftTypography variant="h6">Projects table</SoftTypography>
+          </SoftBox>
+          <SoftBox
+            sx={{
+              "& .MuiTableRow-root:not(:last-child)": {
+                "& td": {
+                  borderBottom: ({ borders: { borderWidth, borderColor } }) =>
+                    `${borderWidth[1]} solid ${borderColor}`,
+                },
+              },
+            }}
+          >
+            <Table columns={prCols} rows={prRows} />
+          </SoftBox>
+        </Card>
       </SoftBox>
       <Footer />
     </DashboardLayout>

@@ -6,14 +6,16 @@ import PropTypes from "prop-types";
 
 import reducer from '../reducer/reducer'
 
-const url = "https://kevin-chela.github.io/manhattan_desert_api/list_orders.json"
+const url = "https://dashboard.developers.co.ke/list"
 
-// const url = "http://dashboard.developers.co.ke/list"
+const url1 = "https://dashboard.developers.co.ke/register"
+
 
 const AppContext = React.createContext()
 
 const initialState = {
-  listOrders: listOrderData,
+
+  clients: listOrderData,
 
 }
 
@@ -28,34 +30,13 @@ export default function ContextProvider({ children }) {
 
   const fetchData = async () => {
     const response = await fetch(url)
-    const listorders = await response.json()
-    dispatch({ type: 'DISPLAY_ITEMS', payload: listorders })
+    const clients = await response.json()
+    dispatch({ type: 'DISPLAY_ITEMS', payload: clients })
   }
 
-  // const addEmployee = (item) =>{
-  //   dispatch({
-  //       type: 'ADD_EMPLOYEE',
-  //       payload: item
-  //   });
-  // }
-
-  // const assignTask = (item) =>{
-  //     dispatch({
-  //         type: 'ASSIGN_TASK',
-  //         payload: item
-  //     });
-  // }
-  // const remove = (id) => {
-  //   dispatch({ type: 'REMOVE', payload: id })
-  // }
-
-  // const fetchData1 = async () => {
-  //   const response = await fetch(url)
-  //   const task = await response.json()
-  //   dispatch({ type: 'DISPLAY_ITEM', payload: task })
-  // }
- 
   useEffect(() => {
+
+    console.log(url)
 
     fetchData()
 

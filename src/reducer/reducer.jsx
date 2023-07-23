@@ -14,7 +14,7 @@ const reducer = (state, action) => {
   //   }
   // }
   if (action.type === 'DISPLAY_ITEMS') {
-    return { ...state, listorders: action.payload, loading: false }
+    return { ...state, clients: action.payload, loading: false }
   }
   // if (action.type === 'DISPLAY_ITEM') {
   //   return { ...state, task: action.payload, loading: false }

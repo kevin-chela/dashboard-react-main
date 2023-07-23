@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { db } from '../firebase/firebaseConfig';
+import { auth } from '../firebase/firebaseConfig';
 
 import PropTypes from "prop-types";
 
@@ -21,25 +22,28 @@ export default function AuthContextProvider({ children }) {
     
     };
 
-    const [user, setUser] = useState(false);
+    const [user, setUser] = useState();
     const [user_data, setUser_data] = useState();
 
-    useEffect(() => {
-        if (user) {
+    // useEffect(() => {
 
-            const getUserData = async () => {
-                const q = query(collection(db, "user_data"), where("user_id", "==", user.uid));
+    //     if (user) {
 
-                const querySnapshot = await getDocs(q);
-                querySnapshot.forEach((doc) => {
-                    // doc.data() is never undefined for query doc snapshots
-                    setUser_data(doc.data());
-                })
-            }
+    //         const getUserData = async () => {
 
-            getUserData();
-        }
-    }, [user])
+    //             const q = query(collection(db, "user_data"), where("user_id", "==", auth.currentUser.uid));
+
+    //             const querySnapshot = await getDocs(q);
+    //             querySnapshot.forEach((doc) => {
+    //                 // doc.data() is never undefined for query doc snapshots
+    //                 setUser_data(doc.data());
+    //             })
+                
+    //         }
+
+    //         getUserData();
+    //     }
+    // }, [user])
 
     const value = {
         user: user,

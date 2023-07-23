@@ -19,6 +19,8 @@ import { BrowserRouter } from "react-router-dom";
 import App from "App";
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import 'mdbreact/dist/css/mdb.css';
 
 // Soft UI Dashboard React Context Provider
 

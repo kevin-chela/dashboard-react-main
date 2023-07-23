@@ -20,6 +20,7 @@ import Icon from "@mui/material/Icon";
 // Soft UI Dashboard React components
 import SoftBox from "components/SoftBox";
 import SoftTypography from "components/SoftTypography";
+import SoftAvatar from "components/SoftAvatar";
 
 // Soft UI Dashboard React examples
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
@@ -42,6 +43,12 @@ import OrderOverview from "layouts/dashboard/components/OrderOverview";
 import reportsBarChartData from "layouts/dashboard/data/reportsBarChartData";
 import gradientLineChartData from "layouts/dashboard/data/gradientLineChartData";
 
+
+// Images
+
+import icon from "assets/images/small-logos/icon-sun-cloud.png";
+import map from "assets/images/globe.png";
+
 function Dashboard() {
   const { size } = typography;
   const { chart, items } = reportsBarChartData;
@@ -49,6 +56,23 @@ function Dashboard() {
   return (
     <DashboardLayout>
       <DashboardNavbar />
+
+      <SoftBox style={{padding: 10}} display="flex"  justifyContent="space-between" >
+            
+            <SoftBox display="flex">
+
+            <SoftAvatar src={icon} > </SoftAvatar>
+            &nbsp;
+            <SoftTypography mt={2}  component="label" variant="caption" fontWeight="bold">
+            Hello Good Morning
+            </SoftTypography>
+
+            </SoftBox>
+           
+            <SoftAvatar src={map}></SoftAvatar>
+  
+      </SoftBox>
+
       <SoftBox py={3}>
         <SoftBox mb={3}>
           <Grid container spacing={3}>

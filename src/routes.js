@@ -58,7 +58,10 @@ import {
 
   MDBIcon,
 
-  } from "mdb-react-ui-kit";
+} from "mdb-react-ui-kit";
+
+
+
 
 const routes = [
   {
@@ -72,9 +75,9 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Products",
-    key: "tables",
-    route: "/tables",
+    name: "Register Client",
+    key: "register",
+    route: "/register",
     icon: <Office size="12px" />,
     component: <Tables />,
     noCollapse: true,
