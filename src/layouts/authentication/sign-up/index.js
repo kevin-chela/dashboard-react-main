@@ -43,16 +43,16 @@ import Alert from "components/alert";
 
 function SignUp() {
 
-  const [email, setEmail] = useState("micheal@gmail.com");
-  const [first, setFirst] = useState("micheal");
-  const [last, setLast] = useState("ochieng");
-  const [passport, setPassport] = useState("123456789KL");
-  const [dob, setDOB] = useState("1998/07/09");
-  const [gender, setGender] = useState("Male");
+  const [email, setEmail] = useState();
+  const [first, setFirst] = useState();
+  const [last, setLast] = useState();
+  const [passport, setPassport] = useState();
+  const [dob, setDOB] = useState();
+  const [gender, setGender] = useState();
   const [profile, setProfile] = useState("123");
-  const [address, setAddress] = useState("345 Thika Juja");
-  const [contact, setContact] = useState("+254712345678");
-  const [citizen, setCitizen] = useState("Nigerian");
+  const [address, setAddress] = useState();
+  const [contact, setContact] = useState();
+  const [citizen, setCitizen] = useState();
 
   const [agreement, setAgremment] = useState(true);
 
@@ -71,26 +71,23 @@ function SignUp() {
   setAlert({ show, type, icon, msg })
   }
 
-  const data = {
-
-    email: email,
-    first: first,
-    last: last,
-    passport: passport,
-    dob: dob,
-    gender: gender,
-    profile: profile,
-    address: address,
-    country_of_birth: citizen,
-    contact: contact,
-
-  }
-
-
-
   const register = () => {
  
-    Axios.post("https://dashboard.developers.co.ke/register", JSON.stringify(data),
+    Axios.post("https://dashboard.developers.co.ke/register", JSON.stringify({
+
+      email: email,
+      first: first,
+      last: last,
+      passport: passport,
+      dob: dob,
+      gender: gender,
+      profile: profile,
+      address: address,
+      country_of_birth: citizen,
+      contact: contact,
+
+    }),
+
     {
 
       headers:{
@@ -100,14 +97,14 @@ function SignUp() {
     }).then((response) => {
       // setRegisterStatus(response);
       // console.log(response);
-      if(response.data.message){
+      if(response.message){
 
-        showAlert(true, 'danger', 'info-circle', `${response.data.message}`)
+        showAlert(true, 'danger', 'info-circle', `${response.message}`)
 
       }else{
         
         showAlert(true, 'success', 'check', "Account created successfully")
-        console.log(data.email);
+        console.log(email);
 
       }
     })
@@ -224,7 +221,7 @@ function SignUp() {
                   </SoftTypography>
                   <SoftInput
                    type="text"
-                   placeholder="AK 7 XX XXX XXX"
+                   placeholder="Male"
                    value={gender} 
                    onChange={(e) => setGender(e.target.value)}
                   />
@@ -273,7 +270,7 @@ function SignUp() {
                   </SoftTypography>
                   <SoftInput
                   type="text"
-                  placeholder="+254 7 XX XXX XXX"
+                  placeholder="Kenyan"
                   value={citizen} 
                   onChange={(e) => setCitizen(e.target.value)}
                    />

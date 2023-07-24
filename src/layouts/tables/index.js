@@ -27,7 +27,8 @@ import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
 
-import Profile from "./detail/index";
+//images
+import Profile from "../../assets/images/placeholder.png";
 
 // react-router components
 import { Link } from "react-router-dom";
@@ -100,17 +101,35 @@ function Tables() {
                   <tr key={list.key}>
                   <td>
                       <div className="d-flex align-items-center">
+
+                      {list.profile_image === "123" ? 
+                      
+                      <img
+                      src={Profile}
+                      alt="Default user icon"
+                      style={{
+                          cursor: 'pointer',
+                          height: '45px',
+                          width: '45px',
+                          borderRadius: '50%',
+                      }}
+                      /> 
+                      : 
+
+                      <img
+                      src={list.profile_image}
+                      alt="Default user icon"
+                      style={{
+                          cursor: 'pointer',
+                          height: '45px',
+                          width: '45px',
+                          borderRadius: '50%',
+                      }}
+                      />
+
+                      } 
                     
-                          <img
-                          src={list.profile_image}
-                          alt="Default user icon"
-                          style={{
-                              cursor: 'pointer',
-                              height: '45px',
-                              width: '45px',
-                              borderRadius: '50%',
-                          }}
-                          />
+                         
                       
                       <div className="ms-3">
                           <p className="fw-bold mb-1">{list.email}</p>

@@ -1,23 +1,27 @@
-import React, { useContext, useEffect,  useReducer } from 'react';
-import listOrderData from '../data/order'
+import React, { useContext, useEffect,  useReducer, useState } from 'react';
+import listClientsData from '../data/clients'
 
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
 import reducer from '../reducer/reducer'
 
-const url = "https://dashboard.developers.co.ke/list"
+//Loading
 
-const url1 = "https://dashboard.developers.co.ke/register"
+import ReactLoading from "react-loading";
+
+const url = "https://dashboard.developers.co.ke/list"
 
 
 const AppContext = React.createContext()
 
 const initialState = {
 
-  clients: listOrderData,
+ clients: listClientsData
 
 }
+
+
 
 export function useGlobalContext() {
     return useContext(AppContext);
@@ -25,7 +29,9 @@ export function useGlobalContext() {
 
 export default function ContextProvider({ children }) {
 
-  const [state, dispatch] = useReducer(reducer, initialState)
+const [loading, setLoading] = useState(true);
+
+const [state, dispatch] = useReducer(reducer, initialState)
 
 
   const fetchData = async () => {
@@ -37,6 +43,13 @@ export default function ContextProvider({ children }) {
   useEffect(() => {
 
     console.log(url)
+
+    {loading && <div className='text-center, alignItem: center' style={{position: 'absolute', zIndex: '1000', marginLeft: '120px', marginTop: '180px'}}><ReactLoading
+          type="spinningBubbles"
+          color="#ADD8E6"
+          height={100}
+          width={50} 
+        /></div> }
 
     fetchData()
 
