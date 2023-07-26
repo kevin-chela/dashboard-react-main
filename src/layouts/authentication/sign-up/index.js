@@ -341,7 +341,7 @@ function SignUp() {
             <SoftBox className="row justify-content-center">
               <SoftBox className="col-4 col-lg-4 order-lg-2">
                 <SoftBox className="mt-n4 mt-lg-n6 mb-4 mb-lg-0 ml-lg-5">
-                  <SoftAvatar   size= "xxl" src={curved8} style={{ marginTop: '-70px'}}/>
+                  <SoftAvatar size= "xxl" src={curved8} style={{ marginTop: '-70px'}}/>
                 </SoftBox>
               </SoftBox>
             </SoftBox>

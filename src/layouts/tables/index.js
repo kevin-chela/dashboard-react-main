@@ -20,7 +20,7 @@ import Card from "@mui/material/Card";
 import SoftBox from "components/SoftBox";
 import SoftTypography from "components/SoftTypography";
 import SoftButton from "components/SoftButton";
-import SoftPagination from "components/SoftPagination";
+import SoftInput from "components/SoftInput";
 
 // Soft UI Dashboard React examples
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
@@ -32,6 +32,12 @@ import Profile from "../../assets/images/placeholder.png";
 
 // react-router components
 import { Link } from "react-router-dom";
+
+import React, { useEffect, useState } from 'react';
+
+import ReactPaginate from "react-paginate";
+import { AiFillLeftCircle, AiFillRightCircle } from "react-icons/ai"; // icons form react-icons
+import { IconContext } from "react-icons"; 
 
 import {
 
@@ -51,6 +57,23 @@ function Tables() {
 
   const { clients } = useGlobalContext();
 
+  const [searchTerm, setSearchTerm] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
+
+  const [page, setPage] = useState(0);
+
+  const n = 5
+
+  useEffect(() => {
+    const results = clients.filter((item, index) => {
+     
+      return  (item.email.toLowerCase().includes(searchTerm.toLowerCase())) & (index >= page * n) & (index < (page + 1) * n);
+
+    });
+    setSearchResults(results);
+  }, [clients, searchTerm, page]);
+
+
   return (
     <DashboardLayout>
       <DashboardNavbar />
@@ -60,6 +83,15 @@ function Tables() {
             <SoftBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
 
               <SoftTypography variant="h6">Client Info</SoftTypography>
+
+              <SoftBox pr={2}>
+              <SoftInput
+                placeholder="Search email..."
+                icon={{ component: "search", direction: "left" }}
+                value={searchTerm}
+                onChange={e => setSearchTerm(e.target.value)}
+              />
+              </SoftBox>
 
               <SoftBox>
               <Link to="/authentication/sign-up">
@@ -96,13 +128,14 @@ function Tables() {
               </MDBTableHead>
               <MDBTableBody style={{marginLeft: '150'}}>
 
-              {clients.map((list) => (<>
-
-                  <tr key={list.key}>
+              {searchResults.map((item, index) => (<>
+                 
+                
+                  <tr key={item.key}>
                   <td>
                       <div className="d-flex align-items-center">
 
-                      {list.profile_image === "123" ? 
+                      {item.profile_image === "123" ? 
                       
                       <img
                       src={Profile}
@@ -117,7 +150,7 @@ function Tables() {
                       : 
 
                       <img
-                      src={list.profile_image}
+                      src={item.profile_image}
                       alt="Default user icon"
                       style={{
                           cursor: 'pointer',
@@ -128,32 +161,30 @@ function Tables() {
                       />
 
                       } 
-                    
-                         
                       
                       <div className="ms-3">
-                          <p className="fw-bold mb-1">{list.email}</p>
+                          <p className="fw-bold mb-1">{item.email}</p>
                       </div>
                       </div>
                   </td>
 
                   <td>
-                      <p className="fw-normal mb-1">{list.passport_number}</p>
+                      <p className="fw-normal mb-1">{item.passport_number}</p>
                   </td>
 
                   <td>
-                      <p className="fw-normal mb-1">{list.contact}</p>
+                      <p className="fw-normal mb-1">{item.contact}</p>
                   </td>
 
                   <td>
-                      <p className="fw-normal mb-1">{list.country_of_birth}</p>
+                      <p className="fw-normal mb-1">{item.country_of_birth}</p>
                   </td>
 
                   <td>
            
                   <Link
                     to={{
-                      pathname: `/register/details/${list.id}`
+                      pathname: `/register/details/${item.id}`
                       
                     }}
                   >
@@ -166,19 +197,41 @@ function Tables() {
 
                 </tr>
 
-                </> 
+              </> 
+
               ))}
               
               
               </MDBTableBody>
-
-              <SoftPagination>
-             
-              </SoftPagination>
                 
               </MDBTable>
+              
+              <SoftBox mt={4} style={{marginLeft: '40%'}}>
+              <ReactPaginate
+              containerClassName={"pagination"}
+              pageClassName={"page-item"}
+              activeClassName={"active"}
+              onPageChange={(event) => setPage(event.selected)}
+              pageCount={Math.ceil(clients.length / n)}
+              breakLabel="..."
+              previousLabel={
+                <IconContext.Provider value={{ color: "#B8C1CC", size: "36px" }}>
+                  <AiFillLeftCircle />
+                </IconContext.Provider>
+              }
+              nextLabel={
+                <IconContext.Provider value={{ color: "#B8C1CC", size: "36px" }}>
+                  <AiFillRightCircle />
+                </IconContext.Provider>
+              }
+
+            />
+              </SoftBox>
+
+             
 
             </SoftBox>
+            
           </Card>
         </SoftBox>
         

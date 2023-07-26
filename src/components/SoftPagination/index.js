@@ -68,7 +68,7 @@ SoftPagination.defaultProps = {
   variant: "gradient",
   color: "info",
   size: "medium",
-  active: false,
+  active: true,
 };
 
 // Typechecking props for the SoftPagination
