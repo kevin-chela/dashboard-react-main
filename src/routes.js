@@ -40,6 +40,7 @@ import Dashboard from "layouts/dashboard";
 import Tables from "layouts/tables";
 import Billing from "layouts/billing";
 import Profile from "layouts/profile";
+import Details from "layouts/authentication/details";
 import VirtualReality from "layouts/virtual-reality"
 import SignIn from "layouts/authentication/sign-in";
 import SignUp from "layouts/authentication/sign-up";
@@ -59,9 +60,6 @@ import {
   MDBIcon,
 
 } from "mdb-react-ui-kit";
-
-
-
 
 const routes = [
   {
@@ -137,7 +135,9 @@ const routes = [
     icon: <MDBIcon fas icon="fas-sm fa-fingerprint"/>,
     component: <Otp />,
     noCollapse: true,
+    display: false,
   },
 ];
+
 
 export default routes;

@@ -49,7 +49,7 @@ import { useGlobalContext } from '../../contextData/context'
 
 function Tables() {
 
-  const { clients } = useGlobalContext()
+  const { clients } = useGlobalContext();
 
   return (
     <DashboardLayout>
@@ -97,7 +97,7 @@ function Tables() {
               <MDBTableBody style={{marginLeft: '150'}}>
 
               {clients.map((list) => (<>
-        
+
                   <tr key={list.key}>
                   <td>
                       <div className="d-flex align-items-center">
@@ -150,11 +150,18 @@ function Tables() {
                   </td>
 
                   <td>
-                  <Link to="/authentication/sign-up">
-                  <SoftButton variant="gradient" color="success">
+           
+                  <Link
+                    to={{
+                      pathname: `/register/details/${list.id}`
+                      
+                    }}
+                  >
+                  <SoftButton variant="gradient" color="warning">
                     View Profile
                   </SoftButton>
                   </Link>
+
                   </td>
 
                 </tr>

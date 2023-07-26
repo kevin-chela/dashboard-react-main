@@ -55,6 +55,7 @@ import { useAuth } from "./context-stores/authcontext";
 
 //sign in
 import SignIn from "layouts/authentication/sign-in";
+import Details from "layouts/authentication/details";
 
 export default function App() {
 
@@ -218,6 +219,7 @@ export default function App() {
       <Routes>
         {getRoutes(routes)}
         <Route path="*" element={<Navigate to="/dashboard" />} />
+        <Route path="/register/details/:id" element={<Details/>} />
       </Routes>
       </ThemeProvider>
       </>

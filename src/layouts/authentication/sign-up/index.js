@@ -54,6 +54,8 @@ function SignUp() {
   const [contact, setContact] = useState();
   const [citizen, setCitizen] = useState();
 
+  console.log(first);
+
   const [agreement, setAgremment] = useState(true);
 
   const handleSetAgremment = () => setAgremment(!agreement);
@@ -164,7 +166,8 @@ function SignUp() {
                   type="text"
                   placeholder="First"
                   value={first} 
-                  onChange={(e) => setFirst(e.target.value)} 
+                  onChange={(e) => setFirst(e.target.value.toUpperCase())} 
+                  capitalize
                   />
                   </SoftBox>
                 </SoftBox>
@@ -174,7 +177,7 @@ function SignUp() {
                   type="text"
                   placeholder="Last"
                   value={last} 
-                  onChange={(e) => setLast(e.target.value)}  />
+                  onChange={(e) => setLast(e.target.value.toUpperCase())}  />
                   </SoftBox>
                 </SoftBox>
                 <SoftBox className="col-md-6">
@@ -227,6 +230,7 @@ function SignUp() {
                   />
                   </SoftBox>
                 </SoftBox>
+             
               </SoftBox>
               
               <SoftTypography mt={3} variant="h5" fontWeight="medium">
