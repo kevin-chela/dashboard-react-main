@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/dashboard-react-main/static/css/main.9593274a.css",
-    "main.js": "/dashboard-react-main/static/js/main.051aa066.js",
+    "main.js": "/dashboard-react-main/static/js/main.1f0e64c0.js",
     "static/media/home-decor-3.jpg": "/dashboard-react-main/static/media/home-decor-3.74d13fcbd3c631fc7908.jpg",
     "static/media/home-decor-2.jpg": "/dashboard-react-main/static/media/home-decor-2.b4e5397c9846645ba275.jpg",
     "static/media/home-decor-1.jpg": "/dashboard-react-main/static/media/home-decor-1.05e218fd495ccc65c99d.jpg",
@@ -43,6 +43,6 @@
   },
   "entrypoints": [
     "static/css/main.9593274a.css",
-    "static/js/main.051aa066.js"
+    "static/js/main.1f0e64c0.js"
   ]
 }
